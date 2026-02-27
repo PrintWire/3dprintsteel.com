@@ -157,3 +157,135 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
+/* ========================================
+   RSS NEWS FEED
+   ======================================== */
+
+var METAL_RSS_FEEDS = [
+  { url: 'https://3dprint.com/feed/', title: '3D Printing Industry News' },
+  { url: 'https://3dprintingindustry.com/feed/', title: '3D Printing Industry' },
+  { url: 'https://3dnatives.com/en/feed/', title: '3D Natives' },
+  { url: 'https://newatlas.com/index.rss', title: 'New Atlas' }
+];
+
+function stripHtmlTags(html) {
+  var tmp = document.createElement('DIV');
+  tmp.innerHTML = html;
+  return tmp.textContent || tmp.innerText || '';
+}
+
+function fetchMetalRSSFeed(feedUrl) {
+  return new Promise(function(resolve) {
+    var controller = new AbortController();
+    var timeoutId = setTimeout(function() { controller.abort(); resolve([]); }, 6000);
+    var corsUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
+    fetch(corsUrl, { signal: controller.signal })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        clearTimeout(timeoutId);
+        if (data.items) {
+          resolve(data.items.slice(0, 2).map(function(item) {
+            return {
+              title: item.title, link: item.link,
+              pubDate: new Date(item.pubDate).toLocaleDateString(),
+              description: item.description ? stripHtmlTags(item.description).substring(0, 150) + '...' : '',
+              thumbnail: item.thumbnail || (item.enclosure && item.enclosure.link) || null
+            };
+          }));
+        } else { resolve([]); }
+      })
+      .catch(function() { clearTimeout(timeoutId); resolve([]); });
+  });
+}
+
+var METAL_NEWS_FALLBACKS = [
+  'images/03-laser-sintering-sparks.png','images/10-dmls-machine-interior.png',
+  'images/16-slm-recoater-blade.png','images/14-ded-machine-sparks.png',
+  'images/12-build-plate-removal.png','images/18-powder-handling.png'
+];
+
+function loadMetalNewsFeed() {
+  var container = document.getElementById('news-feed');
+  if (!container) return;
+  container.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#888;padding:2rem;">Loading latest industry news...</p>';
+  Promise.all(METAL_RSS_FEEDS.map(function(feed) { return fetchMetalRSSFeed(feed.url); }))
+    .then(function(results) {
+      var allArticles = [];
+      results.forEach(function(articles) { allArticles = allArticles.concat(articles); });
+      var filtered = allArticles.filter(function(a) { return a.title && a.link; }).slice(0, 6);
+      if (filtered.length === 0) {
+        container.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#888;">Unable to load news at this time.</p>';
+        return;
+      }
+      container.innerHTML = filtered.map(function(article, idx) {
+        var fallbackImg = METAL_NEWS_FALLBACKS[idx % METAL_NEWS_FALLBACKS.length];
+        var imgSrc = article.thumbnail || fallbackImg;
+        return [
+          '<div class="news-item">',
+          '<div class="news-image">',
+          '<img src="' + imgSrc + '" data-fallback="' + fallbackImg + '" alt="Industry News" loading="lazy"',
+          ' onerror="this.onerror=null;this.src=this.dataset.fallback">',
+          '</div>',
+          '<div class="news-content">',
+          '<div class="news-date">' + article.pubDate + '</div>',
+          '<h4>' + article.title + '</h4>',
+          '<p>' + article.description + '</p>',
+          '<a href="' + article.link + '" target="_blank" rel="noopener noreferrer" class="news-link">Read More →</a>',
+          '</div></div>'
+        ].join('');
+      }).join('');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', loadMetalNewsFeed);
+
+/* ========================================
+   WEB3FORMS CONTACT FORM
+   ======================================== */
+
+document.addEventListener('DOMContentLoaded', function() {
+  var contactForms = document.querySelectorAll('#rfqForm, #contact-form');
+  contactForms.forEach(function(form) {
+    var msgEl = form.querySelector('.form-message');
+    if (!msgEl) {
+      msgEl = document.createElement('div');
+      msgEl.className = 'form-message';
+      form.insertBefore(msgEl, form.firstChild);
+    }
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      msgEl.textContent = ''; msgEl.className = 'form-message';
+      var nameEl = form.querySelector('[name="name"]');
+      var emailEl = form.querySelector('[name="email"]');
+      var messageEl = form.querySelector('[name="message"]');
+      var errors = [];
+      if (nameEl && !nameEl.value.trim()) errors.push('Please enter your name.');
+      if (emailEl) {
+        if (!emailEl.value.trim()) { errors.push('Please enter your email.'); }
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) { errors.push('Please enter a valid email address.'); }
+      }
+      if (messageEl && !messageEl.value.trim()) errors.push('Please enter a message.');
+      if (errors.length > 0) { msgEl.className = 'form-message error'; msgEl.innerHTML = errors.join('<br>'); return; }
+      var submitBtn = form.querySelector('[type="submit"]');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending...'; }
+      var formData = new FormData(form);
+      if (!formData.get('access_key')) { formData.append('access_key', '6f33053b-6d08-414b-9615-665f88c98da8'); }
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+          if (data.success) {
+            msgEl.className = 'form-message success';
+            msgEl.textContent = 'Thank you! Your message has been sent. We will respond within 24 hours.';
+            form.reset();
+          } else { msgEl.className = 'form-message error'; msgEl.textContent = 'Error: ' + (data.message || 'Please try again.'); }
+        })
+        .catch(function() {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message'; }
+          msgEl.className = 'form-message error';
+          msgEl.textContent = 'Network error. Please check your connection and try again.';
+        });
+    });
+  });
+});

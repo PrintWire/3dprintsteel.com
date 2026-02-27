@@ -595,3 +595,23 @@ section { padding:8rem 0; }
     .timeline-step { flex-direction:column;align-items:flex-start; }
     .timeline-line { display:none; }
 }
+
+/* ===== SITE THEME: Industrial Steel ===== */
+:root {
+    --primary: #78a9d8;
+    --primary-dark: #4a7baa;
+    --accent: #5ec4c4;
+    --bg-dark: #060c14;
+    --bg-darker: #030609;
+    --bg-card: #0c1624;
+    --font-heading: 'Kanit', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+.site-header { background: rgba(6,12,20,0.85); }
+h1,h2,h3,h4,h5,h6 { letter-spacing: 0.03em; }
+
+/* Form feedback messages */
+.form-message { padding:0.75rem 1rem;border-radius:4px;margin-bottom:1rem;font-size:0.9rem;display:none; }
+.form-message:not(:empty) { display:block; }
+.form-message.success { background:rgba(39,174,96,0.15);border:1px solid rgba(39,174,96,0.4);color:#27ae60; }
+.form-message.error { background:rgba(231,76,60,0.15);border:1px solid rgba(231,76,60,0.4);color:#e74c3c; }
