@@ -1,0 +1,20 @@
+---
+title: "3D Print Steel Services"
+type: "page"
+layout: "services"
+description: "Professional steel and stainless steel 3D printing services — DMLS and SLM steel printing — 316L, 17-4 PH, and maraging steel for tooling, structural components, and industrial parts."
+heroImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+process:
+  - step: "01"
+    title: "Consultation"
+    text: "We review your requirements, material specs, tolerances, and production volume to recommend the optimal process."
+  - step: "02"
+    title: "Design Review"
+    text: "DfAM analysis ensures your design is optimised for the chosen process — wall thickness, support strategy, and feature resolution."
+  - step: "03"
+    title: "Production"
+    text: "Parts produced to specification with full process monitoring, quality control, and material traceability."
+  - step: "04"
+    title: "Delivery"
+    text: "Inspection, finishing, and delivery with full documentation and material certification where required."
+---
