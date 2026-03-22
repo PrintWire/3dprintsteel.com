@@ -1,0 +1,183 @@
+baseURL = "https://3dprintsteel.com/"
+languageCode = "en-us"
+title = "3D Print Steel"
+theme = "printwire"
+
+[params]
+tagline       = "DMLS and SLM steel printing — 316L, 17-4 PH, and maraging steel for tooling, structural components, and industrial parts."
+description   = "3D Print Steel covers metal additive manufacturing of steel and stainless steel — from 316L structural components to hardened tool steel inserts and wear-resistant parts."
+keywords      = "steel 3D printing, stainless steel DMLS, 316L 3D print, 17-4 PH, maraging steel, tool steel AM, SLM steel"
+logoEmoji     = "⚒️"
+contactEmail  = "maxdavisgroup@gmail.com"
+footerServicesLabel = "Services"
+
+colorPrimary      = "#64748b"
+colorPrimaryDark  = "#475569"
+colorPrimaryLight = "#94a3b8"
+colorBgDark       = "#08090b"
+colorBgSection    = "#0c0e11"
+colorBgCard       = "#111418"
+colorBgCardHover  = "#161b22"
+
+fontPrimary   = "Orbitron"
+fontSecondary = "Space+Grotesk"
+
+newsFallbackImages = ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"]
+
+heroEyebrow  = "Steel Additive Manufacturing"
+heroTitle    = "3D Print <em>Steel</em>"
+heroSubtitle = "DMLS and SLM steel printing — 316L, 17-4 PH, and maraging steel for tooling, structural components, and industrial parts."
+heroCta1Text = "Explore Services"
+heroCta1URL  = "/services/"
+heroCta2Text = "Get a Quote"
+heroCta2URL  = "/contact/"
+heroImage    = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+
+overviewTitle   = "Steel Parts by Additive Manufacturing"
+overviewText    = "316L for corrosion resistance. 17-4 PH for high strength. Maraging steel for tool inserts. All printed to near-net shape with density exceeding 99.5%."
+overviewBtnText = "View Services"
+overviewBtnURL  = "/services/"
+
+applicationsTitle = "Industries We Serve"
+servicesTitle    = "3D Print Steel Services"
+servicesSubtitle = "DMLS and SLM steel printing — 316L, 17-4 PH, and maraging steel for tooling, structural components, and industrial parts."
+clusterTitle = "Related 3D Printing Resources"
+newsletterTitle = "Industry Updates to Your Inbox"
+newsletterText  = "Research breakthroughs and industry news — delivered monthly."
+ctaTitle   = "Start Your Project"
+ctaText    = "DMLS and SLM steel printing — 316L, 17-4 PH, and maraging steel for tooling, structural components, and industrial parts."
+ctaBtnText = "Get in Touch"
+ctaBtnURL  = "/contact/"
+
+[[params.stats]]
+count  = 99.5
+suffix = "%"
+label  = "Density (DMLS 316L)"
+
+[[params.stats]]
+count  = 565
+suffix = "MPa"
+label  = "UTS 316L Printed"
+
+[[params.stats]]
+count  = 1372
+suffix = "MPa"
+label  = "UTS 17-4 PH Printed"
+
+[[params.stats]]
+count  = 48
+suffix = "hr"
+label  = "Typical Lead Time"
+
+
+[[params.applications]]
+title       = "Industrial Tooling"
+description = "Conformal-cooled injection mould inserts and die components in maraging steel."
+image       = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+
+[[params.applications]]
+title       = "Structural Components"
+description = "316L and 17-4 PH load-bearing brackets, housings, and structural nodes."
+image       = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+
+[[params.applications]]
+title       = "Medical Grade Parts"
+description = "316L biocompatible surgical instruments and sterile medical components."
+image       = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+
+[[params.applications]]
+title       = "Spare & Replacement Parts"
+description = "Obsolete steel components reproduced from drawings or scan data on-demand."
+image       = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+
+
+[[params.servicesPreview]]
+icon        = "⚒️"
+title       = "316L Stainless Steel"
+description = "Fully dense 316L parts — corrosion resistant, biocompatible, food-grade. Density >99.5%, UTS 565 MPa."
+
+[[params.servicesPreview]]
+icon        = "◎"
+title       = "17-4 PH Steel"
+description = "High-strength precipitation-hardened steel for structural and aerospace applications — UTS up to 1,372 MPa."
+
+[[params.servicesPreview]]
+icon        = "🔩"
+title       = "Tool Steel & Maraging"
+description = "MS1 maraging steel for conformal-cooled tooling — 50+ HRC hardness after ageing treatment."
+
+[[params.servicesPreview]]
+icon        = "🔬"
+title       = "Post-Processing"
+description = "Heat treatment, HIP, CNC finishing, electropolishing, and PVD coating for steel AM parts."
+
+
+[[params.services]]
+name        = "316L Stainless Steel"
+description        = "Fully dense 316L parts — corrosion resistant, biocompatible, food-grade. Density >99.5%, UTS 565 MPa."
+icon        = "⚒️"
+image        = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+
+[[params.services]]
+name        = "17-4 PH Steel"
+description        = "High-strength precipitation-hardened steel for structural and aerospace applications — UTS up to 1,372 MPa."
+icon        = "◎"
+image        = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+
+[[params.services]]
+name        = "Tool Steel & Maraging"
+description        = "MS1 maraging steel for conformal-cooled tooling — 50+ HRC hardness after ageing treatment."
+icon        = "🔩"
+image        = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+
+[[params.services]]
+name        = "Post-Processing"
+description        = "Heat treatment, HIP, CNC finishing, electropolishing, and PVD coating for steel AM parts."
+icon        = "🔬"
+image        = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+
+
+[[params.clusterLinks]]
+name        = "3dprinttitanium.com"
+url         = "https://3dprinttitanium.com"
+description = "Titanium 3D printing"
+
+[[params.clusterLinks]]
+name        = "dmls3d.com"
+url         = "https://dmls3d.com"
+description = "Metal 3D printing"
+
+[[params.clusterLinks]]
+name        = "steel3dprint.com"
+url         = "https://steel3dprint.com"
+description = "Steel 3D printing"
+
+[[params.clusterLinks]]
+name        = "metalpowder.co"
+url         = "https://metalpowder.co"
+description = "Metal powder for AM"
+
+[[menu.main]]
+name = "Home"
+url  = "/"
+weight = 1
+[[menu.main]]
+name = "About"
+url  = "/about/"
+weight = 2
+[[menu.main]]
+name = "Articles"
+url  = "/articles/"
+weight = 3
+[[menu.main]]
+name = "Services"
+url  = "/services/"
+weight = 4
+[[menu.main]]
+name = "Contact"
+url  = "/contact/"
+weight = 5
+[[menu.main]]
+name = "Advertise"
+url  = "/advertise/"
+weight = 6
