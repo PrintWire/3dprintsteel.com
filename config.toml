@@ -116,25 +116,25 @@ description = "Heat treatment, HIP, CNC finishing, electropolishing, and PVD coa
 name        = "316L Stainless Steel"
 description        = "Fully dense 316L parts — corrosion resistant, biocompatible, food-grade. Density >99.5%, UTS 565 MPa."
 icon        = "⚒️"
-image        = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+image       = "/images/app-aerospace.png"
 
 [[params.services]]
 name        = "17-4 PH Steel"
 description        = "High-strength precipitation-hardened steel for structural and aerospace applications — UTS up to 1,372 MPa."
 icon        = "◎"
-image        = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+image       = "/images/app-medical.png"
 
 [[params.services]]
 name        = "Tool Steel & Maraging"
 description        = "MS1 maraging steel for conformal-cooled tooling — 50+ HRC hardness after ageing treatment."
 icon        = "🔩"
-image        = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+image       = "/images/app-industrial.png"
 
 [[params.services]]
 name        = "Post-Processing"
 description        = "Heat treatment, HIP, CNC finishing, electropolishing, and PVD coating for steel AM parts."
 icon        = "🔬"
-image        = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+image       = "/images/app-energy.png"
 
 
 [[params.clusterLinks]]
