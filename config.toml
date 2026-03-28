@@ -22,7 +22,7 @@ colorBgCardHover  = "#161b22"
 fontPrimary   = "Orbitron"
 fontSecondary = "Space+Grotesk"
 
-newsFallbackImages = ["https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"]
+newsFallbackImages = ["/images/fallback1.png", "/images/fallback2.png", "/images/fallback3.png"]
 
 heroEyebrow  = "Steel Additive Manufacturing"
 heroTitle    = "3D Print <em>Steel</em>"
@@ -31,7 +31,7 @@ heroCta1Text = "Explore Services"
 heroCta1URL  = "/services/"
 heroCta2Text = "Get a Quote"
 heroCta2URL  = "/contact/"
-heroImage    = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+heroImage    = "/images/hero.png"
 
 overviewTitle   = "Steel Parts by Additive Manufacturing"
 overviewText    = "316L for corrosion resistance. 17-4 PH for high strength. Maraging steel for tool inserts. All printed to near-net shape with density exceeding 99.5%."
@@ -73,22 +73,22 @@ label  = "Typical Lead Time"
 [[params.applications]]
 title       = "Industrial Tooling"
 description = "Conformal-cooled injection mould inserts and die components in maraging steel."
-image       = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+image       = "/images/app-aerospace.png"
 
 [[params.applications]]
 title       = "Structural Components"
 description = "316L and 17-4 PH load-bearing brackets, housings, and structural nodes."
-image       = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+image       = "/images/app-medical.png"
 
 [[params.applications]]
 title       = "Medical Grade Parts"
 description = "316L biocompatible surgical instruments and sterile medical components."
-image       = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+image       = "/images/app-industrial.png"
 
 [[params.applications]]
 title       = "Spare & Replacement Parts"
 description = "Obsolete steel components reproduced from drawings or scan data on-demand."
-image       = "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+image       = "/images/app-energy.png"
 
 
 [[params.servicesPreview]]
