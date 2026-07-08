@@ -1,0 +1,20 @@
+baseURL = "https://3dprintsteel.com/"
+languageCode = "en-us"
+title = "3D Print Steel"
+
+[params]
+  description = "Steel 3D printing news, research, and services — stainless, tool steel, and maraging steel additive manufacturing."
+  siteName = "3D Print Steel"
+logoHtml = '3D&nbsp;PRINT&nbsp;<span class="ed-logo-accent">STEEL</span>'
+  tagline = "The authoritative source for DMLS and metal additive manufacturing"
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "JSON"]
