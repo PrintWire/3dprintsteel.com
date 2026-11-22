@@ -4,7 +4,7 @@ title = "3D Print Steel"
 
 [params]
 ogImage       = "/images/13-batch-build-plate-overhead.png"
-  description = "Steel 3D printing news, research, and services — stainless, tool steel, and maraging steel additive manufacturing."
+  description = "3D Print Steel is a PrintWire network site about steel 3D printing. PrintWire passes quote requests to specialised manufacturers and returns pricing. PrintWire does not manufacture parts itself."
   siteName = "3D Print Steel"
 logoHtml = '3D&nbsp;PRINT&nbsp;<span class="ed-logo-accent">STEEL</span>'
   tagline = "The authoritative source for DMLS and metal additive manufacturing"
